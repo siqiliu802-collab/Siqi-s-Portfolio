@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Content creation — Siqi's Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=DM+Mono&amp;family=Noto+Serif+SC:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="media-viewer.css" rel="stylesheet">
+<style>
+:root{--bg:#F9F7F9;--ink:#111;--mute:#6B6670;--muted:var(--mute);--line:#DAD6DC;box-sizing:border-box}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:'Noto Serif SC',serif}.mono{font:11px 'DM Mono',monospace;letter-spacing:.08em}
+.page{width:min(1180px,88vw);margin:0 auto;padding:24px 0 13vh}.nav{display:flex;justify-content:space-between;align-items:center;min-height:38px;margin-bottom:clamp(42px,7vh,76px)}.back{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}.count,.project-no,.year{color:var(--mute)}.project-footer{padding-top:clamp(48px,8vh,88px)}.bottom-back{display:inline-block;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding:0 1px 4px;font-size:11px;line-height:1.2}
+.hero{padding-bottom:clamp(28px,5vh,52px);border-bottom:1px solid var(--ink)}.hero h1{width:min(920px,82vw);margin:0;line-height:0}.hero h1 img{display:block;width:100%;height:auto}.hero p{max-width:680px;margin:24px 0 0;color:var(--mute);font-size:15px;line-height:1.8}
+.project{padding:clamp(56px,9vh,104px) 0;border-bottom:1px solid var(--line)}.project-head{display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:22px;align-items:baseline;margin-bottom:clamp(30px,5vh,52px)}.project h2{margin:0;font:700 clamp(25px,3vw,42px)/1.35 'Noto Serif SC',serif}.project-layout{display:grid;grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr);gap:clamp(36px,6vw,82px);align-items:start}.cover-wrap{position:sticky;top:28px}.media{position:relative;aspect-ratio:9/16;overflow:hidden;background:#ECE9EE;border:1px solid var(--line)}.media video{width:100%;height:100%;display:block;object-fit:cover}.media-placeholder{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:20px;color:var(--mute);text-align:center;word-break:break-word}.media.missing .media-placeholder{display:flex}.media.missing video{visibility:hidden}.video-note{margin:9px 0 0;color:var(--mute);font-size:11px;line-height:1.5}.content{min-width:0}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:clamp(26px,4vh,42px)}.tags span{border:1px solid var(--ink);border-radius:999px;padding:6px 12px;font-size:11px}.outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-bottom:clamp(28px,5vh,46px)}.outcome{min-width:0;padding:18px 14px 18px 0}.outcome+.outcome{border-left:1px solid var(--line);padding-left:14px}.outcome strong{display:block;font:italic 400 clamp(19px,2.2vw,32px)/1.15 'Playfair Display',serif;overflow-wrap:anywhere}.outcome span{display:block;margin-top:8px;color:var(--mute);font-size:11px;line-height:1.5}
+.copy-block{margin:0 0 28px}.label{display:block;margin-bottom:8px;color:var(--mute)}.copy-block p{margin:0;font-size:15px;line-height:1.85}.actions{display:grid;gap:18px;margin:0;padding:0;list-style:none;counter-reset:step}.actions li{position:relative;padding-left:42px;line-height:1.8;counter-increment:step}.actions li::before{content:'0' counter(step);position:absolute;left:0;top:2px;color:var(--mute);font:11px 'DM Mono',monospace}
+.editorial-project .project-layout{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr)}.video-deck{position:sticky;top:28px;min-width:0}.deck-stage{position:relative;width:100%;aspect-ratio:9/13.2;isolation:isolate}.video-card{--order:0;position:absolute;left:0;bottom:0;width:72%;aspect-ratio:9/16;overflow:hidden;border:1px solid var(--line);background:#ECE9EE;transform:translate(calc(var(--order)*10%),calc(var(--order)*-4%)) scale(calc(1 - var(--order)*.045));transform-origin:left bottom;z-index:calc(10 - var(--order));transition:transform .35s ease;cursor:pointer}.video-card video{width:100%;height:100%;display:block;object-fit:cover;background:#ECE9EE}.video-card .media-placeholder{display:none}.video-card.missing video{visibility:hidden}.video-card.missing .media-placeholder{display:flex}.deck-controls{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.deck-button{width:38px;height:38px;border:1px solid var(--ink);border-radius:50%;background:transparent;color:var(--ink);font-size:19px;line-height:1;cursor:pointer}.deck-button:focus-visible,.video-card:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.account-card{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:13px;align-items:center;padding:14px 0;margin-bottom:28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.account-avatar{position:relative;width:48px;height:48px;overflow:hidden;border-radius:50%;background:#ECE9EE}.account-avatar img{width:100%;height:100%;display:block;object-fit:cover}.account-avatar.missing img{display:none}.account-avatar .media-placeholder{padding:4px;font-size:7px}.account-avatar.missing .media-placeholder{display:flex}.account-title{font-size:13px;line-height:1.6}.account-stat{color:var(--mute);font-size:11px;text-align:right;white-space:nowrap}.account-background{margin-top:-13px}.comparison-section{margin-top:-24px}.compare{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:stretch;margin:0 0 12px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.compare-col{padding:18px 0}.compare-col:last-child{padding-left:16px}.compare h3{margin:0 0 12px;font-size:13px}.compare p{margin:5px 0;font-size:13px;line-height:1.65}.compare-arrow{display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:18px}.fine-note{margin:8px 0 28px;color:var(--mute);font-size:11px;line-height:1.65}
+.chart-block{margin:34px 0}.chart-block h3,.section-title{margin:0 0 14px;font-size:17px}.chart-shell{position:relative;min-height:210px;border:1px solid var(--line);padding:12px;background:transparent}.chart-shell svg{display:block;width:100%;height:auto;overflow:visible}.chart-placeholder{display:flex;min-height:184px;align-items:center;justify-content:center;color:var(--mute);font-size:12px}.chart-caption{margin:8px 0 0;color:var(--mute);font-size:11px;line-height:1.6}.work-points{display:grid;gap:0;margin:0 0 30px}.work-point{display:grid;grid-template-columns:58px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--line)}.work-point:last-child{border-bottom:1px solid var(--line)}.work-point dt{color:var(--mute)}.work-point dd{margin:0;font-size:14px;line-height:1.8}.review-block{margin:0 0 34px}.review-block p{margin:6px 0;font-size:14px;line-height:1.8}
+.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.case-grid.single-case{width:min(100%,260px);grid-template-columns:minmax(0,1fr)}.case{min-width:0;margin:0}.case-media{position:relative;aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);background:#ECE9EE}.case-media img{width:100%;height:100%;display:block;object-fit:cover}.case-media.missing img{display:none}.case-media.missing .media-placeholder{display:flex}.case figcaption{margin-top:9px;font-size:12px;line-height:1.7}.case figcaption span{display:block;color:var(--mute)}.case-analysis{display:grid;grid-template-columns:minmax(150px,.8fr) minmax(0,1.2fr);gap:18px;align-items:start}.case-analysis .case-media{aspect-ratio:3/4}.analysis-list{margin:0}.analysis-list div{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid var(--line)}.analysis-list div:last-child{border-bottom:1px solid var(--line)}.analysis-list dt{color:var(--mute)}.analysis-list dd{margin:0;font-size:13px;line-height:1.75}
+.case-analysis--compact{grid-template-columns:minmax(140px,.65fr) minmax(0,1.35fr)}.case-analysis--compact .case{width:min(100%,230px)}.case-analysis--compact .analysis-list div{grid-template-columns:88px minmax(0,1fr)}.case-analysis--compact .case-media.fit-image img{margin-bottom:0}
+.project.compact{padding-bottom:clamp(40px,7vh,76px);border-bottom:0}.compact .project-head{margin-bottom:28px}.compact-content{max-width:780px;margin-left:102px}.compact .tags{margin-bottom:28px}.compact .copy-block{margin-bottom:0}.fade{animation:fade .55s ease both}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:899px){.editorial-project .project-layout{grid-template-columns:1fr;gap:34px}.video-deck{position:static;width:100%;overflow:hidden}.deck-stage{display:flex;width:100%;aspect-ratio:auto;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:3px 25% 12px 1px;overscroll-behavior-inline:contain;scrollbar-width:thin}.video-card{position:relative;left:auto;bottom:auto;flex:0 0 68%;width:auto;aspect-ratio:9/16;transform:none!important;z-index:auto!important;scroll-snap-align:start}.deck-controls{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){.deck-stage{display:flex;width:100%;aspect-ratio:auto;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:3px 25% 12px 1px}.video-card{position:relative;left:auto;bottom:auto;flex:0 0 68%;width:auto;aspect-ratio:9/16;transform:none!important;z-index:auto!important;scroll-snap-align:start;transition:none}}
+@media(max-width:760px){.page{width:88vw;padding-top:18px}.nav{margin-bottom:42px}.hero h1{width:100%}.hero p{margin-top:18px}.project{padding:56px 0}.project-head{grid-template-columns:42px minmax(0,1fr);gap:12px;margin-bottom:28px}.year{grid-column:2}.project-layout{grid-template-columns:1fr;gap:32px}.cover-wrap{position:static;width:min(100%,320px)}.outcomes{grid-template-columns:1fr;margin-bottom:30px}.outcome{padding:15px 0}.outcome+.outcome{border-left:0;border-top:1px solid var(--line);padding-left:0}.outcome strong{font-size:25px}.compact-content{margin-left:0}.media-placeholder{padding:12px;font-size:10px}.account-card{grid-template-columns:48px minmax(0,1fr)}.account-stat{grid-column:2;text-align:left;white-space:normal}.compare{grid-template-columns:1fr}.compare-col:last-child{padding-left:0;border-top:1px solid var(--line)}.compare-arrow{height:24px;transform:rotate(90deg)}.case-grid,.case-analysis{grid-template-columns:1fr}.case-analysis .case-media{aspect-ratio:4/3}.work-point{grid-template-columns:50px minmax(0,1fr)}.chart-shell{padding:8px}.editorial-project .project-head h2{overflow-wrap:anywhere}}
+.case-media.fit-image{aspect-ratio:auto}.case-media.fit-image img{height:auto;object-fit:contain}.case-grid .case:nth-child(2) .case-media.fit-image img{margin-top:-8px}.case-analysis .case-media.fit-image img{margin-bottom:-42px}.case-media.fit-image.missing{aspect-ratio:9/16}
+</style>
+</head>
+<body>
+<main class="page fade">
+  <nav class="nav mono" aria-label="页面导航"><a class="back" href="index.html?view=projects#projects">← 返回项目</a><span class="count">03 / 04</span></nav>
+  <header class="hero"><h1><img src="assets/titles/content-creation.png" alt="Content creation"></h1><p>两个风格不同的时尚资讯号，加上我这个秋天开始的 AI 短片练习。</p></header>
+
+  <article class="project editorial-project">
+    <header class="project-head"><span class="project-no mono">01</span><h2>时尚资讯号 @怪老师｜明星穿搭与潮流解析</h2><span class="year mono">2025.11 – 2026.05</span></header>
+    <div class="project-layout">
+      <div class="video-deck" data-deck tabindex="0" aria-label="账号 A 视频作品，可用左右方向键切换">
+        <div class="deck-stage">
+          <div class="video-card" data-card tabindex="0"><video controls playsinline preload="metadata" aria-label="账号 A 视频 1"><source src="assets/content-creation/a1.web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><span class="media-placeholder mono">a1.web.mp4</span></div>
+          <div class="video-card" data-card tabindex="0"><video controls playsinline preload="metadata" aria-label="账号 A 视频 3"><source src="assets/content-creation/a3.web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><span class="media-placeholder mono">a3.web.mp4</span></div>
+        </div>
+        <div class="deck-controls"><button class="deck-button" data-prev type="button" aria-label="上一个视频">←</button><button class="deck-button" data-next type="button" aria-label="下一个视频">→</button></div>
+      </div>
+      <div class="content">
+        <div class="tags mono"><span>视频剪辑</span><span>选题讨论</span><span>商务脚本共创</span></div>
+        <div class="account-card"><div class="account-avatar"><img src="assets/content-creation/a-avatar.jpg" alt="怪老师账号头像" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">a-avatar.jpg</span></div><div class="account-title">怪老师 · 小红书 · 明星同款 / 潮流解析</div><div class="account-stat mono">粉丝 2.3万（截至 2026.11）</div></div>
+        <div class="copy-block account-background"><span class="label mono">背景</span><p>账号原本做图文，2025 年 11 月转做视频，我接手剪辑。</p></div>
+        <section class="comparison-section" aria-labelledby="compare-title"><h3 class="section-title" id="compare-title">结果对比</h3><div class="compare"><div class="compare-col"><h3>图文时期（接手前）</h3><p>均赞 约 70+</p><p>商单 偏少且质量不高</p></div><div class="compare-arrow" aria-hidden="true">→</div><div class="compare-col"><h3>视频时期（我接手后）</h3><p>均赞 1000+</p><p>商单 20+</p><p>流量全部来自自然流</p></div></div><p class="fine-note">我给这个账号剪的第3个单子，点赞就破1000+</p></section>
+        <section class="chart-block" aria-labelledby="likes-title"><h3 id="likes-title">点赞变化（接单前4个月VS接单后4个月）</h3><div class="chart-shell" id="likes-chart"></div></section>
+        <section aria-labelledby="work-a-title"><h3 class="section-title" id="work-a-title">我做了什么</h3><dl class="work-points"><div class="work-point"><dt class="mono">剪辑</dt><dd>独立剪辑账号日常短视频，累计 40+ 条，其中商单 20+。</dd></div><div class="work-point"><dt class="mono">节奏</dt><dd>粉丝喜欢快节奏、能马上拿到信息，所以我用强节奏卡点和高饱和包装，把信息放在最前面。</dd></div><div class="work-point"><dt class="mono">选题</dt><dd>参与部分选题讨论，寻找近期热点，把品牌信息放进内容场景里，不单独打广告。</dd></div></dl></section>
+        <section class="review-block"><span class="label mono">复盘</span><p>数据变好不全是剪辑的功劳：粉丝基础在涨，选题也跟上了热度。</p><p>我能控制的是节奏：我会拆同行的爆款，看他们在哪里卡点、信息怎么排，再按这个账号粉丝爱看的快节奏调整。</p></section>
+        <section aria-labelledby="cases-a-title"><h3 class="section-title" id="cases-a-title">爆款案例｜穿搭种草短视频</h3><div class="case-analysis case-analysis--compact"><figure class="case"><div class="case-media fit-image"><img src="assets/content-creation/a-case1.jpg" alt="爆款案例一封面" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">a-case1.jpg</span></div></figure><dl class="analysis-list"><div><dt class="mono">数据</dt><dd>点赞 9000+｜自然流</dd></div><div><dt class="mono">选题</dt><dd>话题度高的人物穿搭（ASA）</dd></div><div><dt class="mono">剪辑</dt><dd><strong>选用她的歌作卡点背景音乐</strong>，快节奏混剪，让用户几秒内获得穿搭信息</dd></div></dl></div></section>
+      </div>
+    </div>
+  </article>
+
+  <article class="project editorial-project">
+    <header class="project-head"><span class="project-no mono">02</span><h2>时尚资讯号 B｜长视频解说</h2><span class="year mono">2026.04 – 2026.09</span></header>
+    <div class="project-layout">
+      <div class="video-deck" data-deck tabindex="0" aria-label="时尚资讯号 B 视频作品，可用左右方向键切换">
+        <div class="deck-stage">
+          <div class="video-card" data-card tabindex="0"><video controls playsinline preload="metadata" aria-label="时尚资讯号 B 视频 1"><source src="assets/content-creation/b1.web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><span class="media-placeholder mono">b1.web.mp4</span></div>
+          <div class="video-card" data-card tabindex="0"><video controls playsinline preload="metadata" aria-label="时尚资讯号 B 视频 2"><source src="assets/content-creation/b2.web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><span class="media-placeholder mono">b2.web.mp4</span></div>
+          <div class="video-card" data-card tabindex="0"><video controls playsinline preload="metadata" aria-label="时尚资讯号 B 视频 3"><source src="assets/content-creation/b3.web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><span class="media-placeholder mono">b3.web.mp4</span></div>
+        </div>
+        <div class="deck-controls"><button class="deck-button" data-prev type="button" aria-label="上一个视频">←</button><button class="deck-button" data-next type="button" aria-label="下一个视频">→</button></div>
+      </div>
+      <div class="content">
+        <div class="tags mono"><span>视频剪辑</span><span>长视频解说</span><span>节奏把控</span></div>
+        <div class="outcomes" aria-label="内容成果"><div class="outcome"><strong>10+</strong><span>成片</span></div><div class="outcome"><strong>4</strong><span>商单</span></div><div class="outcome"><strong>1000+</strong><span>单条最高点赞 [小红书纯自然流]</span></div></div>
+        <div class="copy-block"><span class="label mono">背景</span><p>以长视频解说为主的账号。长视频比短视频更考验剪辑，也更难留住观众。</p></div>
+        <section aria-labelledby="work-b-title"><h3 class="section-title" id="work-b-title">我做了什么</h3><dl class="work-points"><div class="work-point"><dt class="mono">接手前</dt><dd>先看这个账号以往的剪辑手法和调性，再拆同类账号的爆款，学它们怎么留人。</dd></div><div class="work-point"><dt class="mono">剪辑</dt><dd>负责长视频的剪辑和节奏把控，保持账号一贯的调性。</dd></div></dl></section>
+        <section class="review-block"><span class="label mono">复盘</span><p>长视频解说对内容节奏和观众耐心要求更高，因此剪辑上不追求单纯的快切，需要更丰富的视觉呈现和音乐转场控制观看节奏，避免长时间单一画面造成审美疲劳。增强内容的可看性和持续吸引力。</p></section>
+        <section aria-labelledby="case-b-title"><h3 class="section-title" id="case-b-title">爆款案例｜资讯解说视频</h3><div class="case-analysis"><figure class="case"><div class="case-media fit-image"><img src="assets/content-creation/b-case1.jpg" alt="时尚资讯号 B 爆款案例封面" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">b-case1.jpg</span></div><figcaption>小红书自然流</figcaption></figure><dl class="analysis-list"><div><dt class="mono">数据</dt><dd>点赞 1000+、收藏 500+｜自然流</dd></div><div><dt class="mono">选题</dt><dd>打工人上班时尚穿搭</dd></div><div><dt class="mono">剪辑</dt><dd><strong>用卡点串联复古模特画面做开头</strong>，中段切入主题视频，靠镜头变化和音乐转场维持观看兴趣</dd></div><div><dt class="mono">商单</dt><dd><strong>将商务广告融入潮流内容</strong>，以穿搭主题自然承接品牌信息，兼顾内容观赏性与品牌传播需求，最终获得品牌方认可</dd></div></dl></div></section>
+      </div>
+    </div>
+  </article>
+
+  <footer class="project-footer"><a class="bottom-back" href="index.html?view=projects#projects">← 返回项目</a></footer>
+</main>
+<script>
+const posts=[
+  {date:'2025.07',likes:100,type:'graphic'},
+  {date:'2025.08',likes:100,type:'graphic'},
+  {date:'2025.09',likes:60,type:'graphic'},
+  {date:'2025.10',likes:70,type:'graphic'},
+  {date:'2025.11',likes:2000,type:'video'},
+  {date:'2025.12',likes:1000,type:'video'},
+  {date:'2026.01',likes:700,type:'video'},
+  {date:'2026.02',likes:1000,type:'video'}
+];
+
+function renderLikesChart(data){
+  const target=document.getElementById('likes-chart');
+  if(!target)return;
+  if(!data.length){target.innerHTML='<div class="chart-placeholder mono">[待填：每条内容的点赞数]</div>';return}
+  const width=640,height=230,left=44,right=12,top=34,bottom=28;
+  const plotWidth=width-left-right,plotHeight=height-top-bottom;
+  const max=Math.max.apply(null,data.map(function(post){return post.likes}));
+  const step=plotWidth/data.length,barWidth=Math.max(8,step*.55);
+  const firstVideo=data.findIndex(function(post){return post.type==='video'});
+  const bars=data.map(function(post,index){
+    const barHeight=Math.max(1,post.likes/max*plotHeight);
+    const x=left+index*step+(step-barWidth)/2,y=top+plotHeight-barHeight;
+    const fill=post.type==='graphic'?'var(--muted)':'var(--ink)';
+    const center=x+barWidth/2;
+    const valueY=Math.max(25,y-7);
+    return '<rect x="'+x.toFixed(2)+'" y="'+y.toFixed(2)+'" width="'+barWidth.toFixed(2)+'" height="'+barHeight.toFixed(2)+'" fill="'+fill+'"><title>'+post.date+' · 月均赞 '+post.likes+'+</title></rect><text x="'+center.toFixed(2)+'" y="'+valueY.toFixed(2)+'" text-anchor="middle" fill="var(--ink)" font-size="9" font-family="DM Mono, monospace">'+post.likes+'+</text><text x="'+center.toFixed(2)+'" y="'+(height-8)+'" text-anchor="middle" fill="var(--mute)" font-size="9" font-family="DM Mono, monospace">'+post.date+'</text>';
+  }).join('');
+  const marker=firstVideo<0?'':function(){const x=left+firstVideo*step;return '<line x1="'+x.toFixed(2)+'" y1="18" x2="'+x.toFixed(2)+'" y2="'+(top+plotHeight)+'" stroke="var(--ink)" stroke-width="1"/><text x="'+(x+5).toFixed(2)+'" y="14" fill="var(--mute)" font-size="10" font-family="DM Mono, monospace">2025.11 接手剪辑</text>'}();
+  target.innerHTML='<svg viewBox="0 0 '+width+' '+height+'" role="img" aria-label="接手前后八个月的月均点赞变化"><line x1="'+left+'" y1="'+(top+plotHeight)+'" x2="'+(width-right)+'" y2="'+(top+plotHeight)+'" stroke="var(--line)"/><text x="0" y="'+(top+5)+'" fill="var(--mute)" font-size="10" font-family="DM Mono, monospace">'+max+'+</text><text x="28" y="'+(top+plotHeight+4)+'" fill="var(--mute)" font-size="10" font-family="DM Mono, monospace">0</text>'+marker+bars+'</svg>';
+}
+
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const compactDeck=window.matchMedia('(max-width: 899px)');
+const allDeckVideos=[].slice.call(document.querySelectorAll('[data-deck] video'));
+
+function resetVideo(video){
+  video.pause();
+  try{video.currentTime=0}catch(error){}
+  video.load();
+}
+
+function scrollCardIntoView(deck,card){
+  if(!(compactDeck.matches||reduceMotion))return;
+  const stage=deck.querySelector('.deck-stage');
+  stage.scrollTo({left:card.offsetLeft-stage.offsetLeft,behavior:reduceMotion?'auto':'smooth'});
+}
+
+document.querySelectorAll('[data-deck]').forEach(function(deck){
+  const cards=[].slice.call(deck.querySelectorAll('[data-card]'));
+  let active=0;
+
+  cards.forEach(function(card,index){
+    const video=card.querySelector('video');
+    const source=video.querySelector('source');
+    const placeholder=card.querySelector('.media-placeholder');
+    const poster=video.getAttribute('poster');
+    source.addEventListener('error',function(){card.classList.add('missing');placeholder.textContent=source.getAttribute('src').split('/').pop()});
+    video.addEventListener('error',function(){card.classList.add('missing');placeholder.textContent=source.getAttribute('src').split('/').pop()});
+    if(poster){
+      const posterProbe=new Image();
+      posterProbe.onerror=function(){card.classList.add('missing');placeholder.textContent=poster.split('/').pop()};
+      posterProbe.src=poster;
+    }
+    card.addEventListener('click',function(){if(index===active||card.classList.contains('missing'))return;setActive(index,true)});
+  });
+
+  function setActive(index,play){
+    active=(index+cards.length)%cards.length;
+    allDeckVideos.forEach(resetVideo);
+    cards.forEach(function(card,cardIndex){
+      const order=(cardIndex-active+cards.length)%cards.length;
+      card.style.setProperty('--order',order);
+      card.setAttribute('aria-current',cardIndex===active?'true':'false');
+    });
+    const card=cards[active];
+    scrollCardIntoView(deck,card);
+    if(play&&!card.classList.contains('missing'))card.querySelector('video').play().catch(function(){});
+  }
+
+  deck.querySelector('[data-prev]').addEventListener('click',function(){setActive(active-1,true)});
+  deck.querySelector('[data-next]').addEventListener('click',function(){setActive(active+1,true)});
+  deck.addEventListener('keydown',function(event){
+    if(event.key!=='ArrowLeft'&&event.key!=='ArrowRight')return;
+    event.preventDefault();
+    setActive(active+(event.key==='ArrowRight'?1:-1),true);
+  });
+  setActive(0,false);
+});
+
+renderLikesChart(posts);
+</script>
+<script src="media-viewer.js"></script>
+</body>
+</html>

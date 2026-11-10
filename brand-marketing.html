@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brand marketing — Siqi's Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=DM+Mono&amp;family=Noto+Serif+SC:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="media-viewer.css" rel="stylesheet">
+<style>
+:root{--bg:#F9F7F9;--ink:#111;--mute:#6B6670;--line:#DAD6DC;box-sizing:border-box}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:'Noto Serif SC',serif}.mono{font:11px 'DM Mono',monospace;letter-spacing:.08em}
+.page{width:min(1180px,88vw);margin:0 auto;padding:24px 0 13vh}.nav{display:flex;justify-content:space-between;align-items:center;min-height:38px;margin-bottom:clamp(42px,7vh,76px)}.back{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px}.count,.project-no,.year{color:var(--mute)}.project-footer{padding-top:clamp(48px,8vh,88px)}.bottom-back{display:inline-block;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding:0 1px 4px;font-size:11px;line-height:1.2}
+.hero{padding-bottom:clamp(28px,5vh,52px);border-bottom:1px solid var(--ink)}h1{width:clamp(420px,48vw,650px);margin:0;line-height:0}h1 img{display:block;width:100%;height:auto}
+.project{padding:clamp(56px,9vh,104px) 0;border-bottom:1px solid var(--line)}.project:last-child{border-bottom:0}.project-head{display:grid;grid-template-columns:80px minmax(0,1fr) auto;gap:22px;align-items:baseline;margin-bottom:clamp(30px,5vh,52px)}.project h2{margin:0;font:700 clamp(25px,3vw,42px)/1.35 'Noto Serif SC',serif}.project-layout{display:grid;grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr);gap:clamp(36px,6vw,82px);align-items:start}.cover-wrap{position:sticky;top:28px;container-type:inline-size}
+.media{position:relative;overflow:hidden;background:#ECE9EE;border:1px solid var(--line)}.cover{aspect-ratio:3/4}.media img,.media video{width:100%;height:100%;display:block;object-fit:cover}.media.contain img,.media.contain video{width:100%;height:100%;display:block;object-fit:cover}.cover.contain{width:var(--fit-width,100%);max-width:100%;height:133.333cqw;aspect-ratio:auto}.media-link{display:block;color:inherit;text-decoration:none}.media-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;color:var(--mute);text-align:center;word-break:break-word}.media:not(.missing) .media-placeholder{display:none}.content{min-width:0}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:clamp(26px,4vh,42px)}.tags span{border:1px solid var(--ink);border-radius:999px;padding:6px 12px;font-size:11px}.outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-bottom:clamp(28px,5vh,46px)}.outcome{min-width:0;padding:18px 14px 18px 0}.outcome+.outcome{border-left:1px solid var(--line);padding-left:14px}.outcome strong{display:block;font:italic 400 clamp(19px,2.2vw,32px)/1.15 'Playfair Display',serif;overflow-wrap:anywhere}.outcome span{display:block;margin-top:8px;color:var(--mute);font-size:11px;line-height:1.5}
+.copy-block{margin:0 0 28px}.label{display:block;margin-bottom:8px;color:var(--mute)}.copy-block p{margin:0;font-size:15px;line-height:1.85}.actions{display:grid;gap:18px;margin:0 0 30px;padding:0;list-style:none;counter-reset:step}.actions li{position:relative;padding-left:42px;line-height:1.8;counter-increment:step}.actions li::before{content:'0' counter(step);position:absolute;left:0;top:2px;color:var(--mute);font:11px 'DM Mono',monospace}.review{padding-top:24px;border-top:1px solid var(--line)}.p2-project .actions{margin:-16px 0 18px}.p2-project .review{padding-top:12px}
+.evidence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(34px,6vh,58px)}.evidence figure{min-width:0;margin:0;container-type:inline-size}.evidence .media{aspect-ratio:4/3}.evidence .media.contain{width:var(--fit-width,100%);max-width:100%;height:75cqw;aspect-ratio:auto}.evidence figcaption{margin-top:9px;color:var(--mute);font-size:11px;line-height:1.5}.evidence.aligned-evidence .media{width:100%;height:auto;aspect-ratio:16/9;background:transparent}.evidence.aligned-evidence .media img{object-fit:contain}.evidence.p2-evidence{grid-template-columns:repeat(2,minmax(0,1fr))}.review-lines{display:grid;gap:8px}.review-lines p{margin:0}details{margin-top:28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}summary{padding:18px 0;cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}summary::after{content:'+';float:right;font:20px/1 'DM Mono',monospace}details[open] summary::after{content:'−'}.details-copy{margin:0;padding:0 0 22px;color:var(--mute);line-height:1.8}.details-copy figure{container-type:inline-size}.details-copy .media.contain{width:var(--fit-width,100cqw)!important;max-width:100%;height:56.25cqw;aspect-ratio:auto!important}
+@media(min-width:761px){.project+.project .evidence{margin-top:-21.02px}}
+.fade{animation:fade .55s ease both}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:760px){.page{width:88vw;padding-top:18px}.nav{margin-bottom:42px}h1{width:100%}.project{padding:56px 0}.project-head{grid-template-columns:42px minmax(0,1fr);gap:12px;margin-bottom:28px}.year{grid-column:2}.project-layout{grid-template-columns:1fr;gap:32px}.cover-wrap{position:static}.cover{aspect-ratio:4/5}.cover.contain{width:var(--fit-width-mobile,var(--fit-width,100%));height:125cqw;aspect-ratio:auto}.outcomes{grid-template-columns:1fr;margin-bottom:30px}.outcome{padding:15px 0}.outcome+.outcome{border-left:0;border-top:1px solid var(--line);padding-left:0}.outcome strong{font-size:25px}.evidence{gap:8px}.evidence figcaption{font-size:10px}.media-placeholder{padding:8px;font-size:9px;letter-spacing:0}}
+</style>
+</head>
+<body>
+<main class="page fade">
+  <nav class="nav mono" aria-label="页面导航"><a class="back" href="index.html?view=projects#projects">← 返回项目</a><span class="count">01 / 04</span></nav>
+  <header class="hero"><h1><img src="assets/brand-title-cutout.png" alt="Brand marketing"></h1></header>
+
+  <article class="project">
+    <header class="project-head"><span class="project-no mono">01</span><h2>《随心所育》× 叫叫｜代言人访谈内容与宣发</h2><span class="year mono">2026</span></header>
+    <div class="project-layout">
+      <div class="cover-wrap"><div class="media cover"><img src="assets/brand-marketing/p1-cover.jpg" alt="《随心所育》成片封面" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p1-cover.jpg</span></div></div>
+      <div class="content">
+        <div class="tags mono"><span>代言人筛选</span><span>内容策划</span><span>现场执行</span></div>
+        <div class="outcomes" aria-label="项目结果"><div class="outcome"><strong>160万</strong><span>上线两周播放</span></div><div class="outcome"><strong>6.97万</strong><span>星图归因成交（元）</span></div><div class="outcome"><strong>正片＋二创</strong><span>内容交付</span></div></div>
+        <div class="copy-block"><span class="label mono">背景</span><p>配合开学季节点营销，借新代言人强化品牌认知，把一次对谈变成可持续传播的内容。</p></div>
+        <ol class="actions"><li><strong>筛选：</strong>我按代言目标、人群匹配、数据、风险四个维度，用 AI 进行初筛，再背调，并在会上汇报推荐。</li><li><strong>策划：</strong>我参与选题和花絮策划，让品牌信息顺着她真实的表达进入内容。</li><li><strong>执行：</strong>除正片外，我负责花絮拍摄与二创，现场筛选值得二次传播的片段。</li></ol>
+        <div class="copy-block review"><span class="label mono">复盘</span><p>在我看来，代言项目更重要的是找到人物和用户话题的交点：代言人带来第一眼关注，留住用户的是内容。</p></div>
+        <div class="evidence aligned-evidence">
+          <figure><div class="media"><img src="assets/brand-marketing/p1-scene.jpg" alt="项目现场照" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p1-scene.jpg</span></div><figcaption>现场执行</figcaption></figure>
+          <figure><div class="media"><img src="assets/brand-marketing/p1-doc.jpg" alt="脱敏策划文档" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p1-doc.jpg</span></div><figcaption>策划依据（脱敏版）</figcaption></figure>
+          <figure><a class="media-link" href="assets/brand-marketing/p1-teaser.jpg" target="_blank" aria-label="查看花絮预告原图"><div class="media"><img src="assets/brand-marketing/p1-teaser.jpg" alt="花絮预告" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p1-teaser.jpg</span></div></a><figcaption>花絮预告</figcaption></figure>
+        </div>
+        <details><summary class="mono">展开完整过程</summary><div class="details-copy" style="padding-bottom:0">
+          <section style="padding:24px 0;border-top:1px solid var(--line)">
+            <div style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start"><span class="mono" style="color:var(--mute)">01</span><div style="min-width:0"><h3 style="margin:0 0 12px;font-size:15px;line-height:1.6">筛选｜先想清楚品牌需要什么样的人</h3><p style="margin:0 0 18px;font-size:13px;line-height:1.85">我通过AI、数英、Social Beta等渠道，从代言目标、人群匹配、数据、风险几个维度找人，再逐个查资料筛掉不合适的。最终在两位候选人难取舍时，我拉数据做了整合分析，在会上汇报。</p><figure style="margin:0"><div class="media" style="width:100%;aspect-ratio:1476/976"><img src="assets/brand-marketing/p1-detail-1.jpg" alt="候选对比" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p1-detail-1.jpg</span></div><figcaption style="margin-top:8px;font-size:11px;color:var(--mute)">候选对比（汇报笔记截图）</figcaption></figure></div></div>
+          </section>
+          <section style="padding:24px 0;border-top:1px solid var(--line)">
+            <div style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start"><span class="mono" style="color:var(--mute)">02</span><div style="min-width:0"><h3 style="margin:0 0 12px;font-size:15px;line-height:1.6">策划｜先接住她的语气，再谈品牌要说什么</h3><p style="margin:0 0 18px;font-size:13px;line-height:1.85">她的表达和育儿经历本身就适合进入内容，所以没有把她当"广告人"，选了访谈植入。选题先用 AI 看目标用户最焦虑什么，再结合他们的背景和购买偏好。我参与了选题逻辑、合作内容、花絮策划和花絮剪辑脚本。</p><figure style="margin:0"><div class="media" style="width:100%;aspect-ratio:16/9"><img src="assets/brand-marketing/p1-detail-2.jpg" alt="策划文档" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p1-detail-2.jpg</span></div><figcaption style="margin-top:8px;font-size:11px;color:var(--mute)">策划文档（脱敏版）</figcaption></figure></div></div>
+          </section>
+          <section style="padding:24px 0;border-top:1px solid var(--line)">
+            <div style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start"><span class="mono" style="color:var(--mute)">03</span><div style="min-width:0"><h3 style="margin:0 0 12px;font-size:15px;line-height:1.6">执行｜现场我负责把"值得拍的"抓出来</h3><p style="margin:0 0 18px;font-size:13px;line-height:1.85">我参与北京拍摄，独立负责花絮拍摄和二创。现场没有完全按脚本走，我要判断什么值得拍，再从素材里筛出适合传播的片段。花絮其实是品牌很便宜的真实素材。</p><figure style="margin:0"><a class="media-link" href="assets/brand-marketing/p1-detail-3.jpg" target="_blank" aria-label="查看现场执行原图"><div class="media contain" style="width:100%;aspect-ratio:16/9"><img src="assets/brand-marketing/p1-detail-3.jpg" alt="现场执行" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p1-detail-3.jpg</span></div></a><figcaption style="margin-top:8px;font-size:11px;color:var(--mute)">现场执行</figcaption></figure></div></div>
+          </section>
+          <section style="padding:24px 0;border-top:1px solid var(--line)">
+            <div style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start"><span class="mono" style="color:var(--mute)">04</span><div style="min-width:0"><h3 style="margin:0 0 12px;font-size:15px;line-height:1.6">复盘｜问题不在最后怎么剪，在前面有没有找对人和话题</h3><p style="margin:0 0 18px;font-size:13px;line-height:1.85">代言人自带关注度，但没有合适的问题，她的流量和品牌内容还是各说各的。所以我现在看代言人，不只看曝光，更看她能不能把品牌自然带进用户本来就在讨论的问题里。</p><figure style="margin:0"><a class="media-link" href="assets/brand-marketing/p1-detail-4.jpg" target="_blank" aria-label="查看成片封面原图"><div class="media contain" style="--fit-width:41.07cqw"><img src="assets/brand-marketing/p1-detail-4.jpg" alt="成片封面" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p1-detail-4.jpg</span></div></a><figcaption style="margin-top:8px;font-size:11px;color:var(--mute)">成片封面</figcaption></figure></div></div>
+          </section>
+        </div></details>
+      </div>
+    </div>
+  </article>
+
+  <article class="project p2-project">
+    <header class="project-head"><span class="project-no mono">02</span><h2>叫叫 ×《我们的美好旅行》｜上线前预热</h2><span class="year mono">2026</span></header>
+    <div class="project-layout">
+      <div class="cover-wrap"><div class="media cover contain" style="--fit-width:73.93cqw;--fit-width-mobile:69.31cqw"><video controls playsinline preload="metadata" poster="assets/brand-marketing/p2-poster-2.jpg" aria-label="《我们的美好旅行》预热成片"><source src="assets/brand-marketing/p2-poster-1.web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video></div></div>
+      <div class="content">
+        <div class="tags mono"><span>内容策划</span><span>宣发脚本</span><span>剪辑成片</span></div>
+        <div class="outcomes" aria-label="项目交付物"><div class="outcome"><strong>3 条</strong><span>宣发视频</span></div><div class="outcome"><strong>1 条</strong><span>预热成片</span></div><div class="outcome"><strong>7 月 3 日 12:00</strong><span>节目上线</span></div></div>
+        <div class="copy-block"><span class="label mono">背景</span><p>综艺上线前，用公司已有的代言人体验素材和节目花絮做预热内容。我在拍摄结束后加入，负责后期的脚本与审核。</p></div>
+        <ol class="actions"><li><strong>梳理素材：</strong>从已有花絮中筛选适合上线前释放的片段，确定预热的切入点。</li><li><strong>剪辑脚本：</strong>围绕预热目标，把同一批花絮拆成三个传播角度，写了三条剪辑脚本，交付剪辑制作。</li><li><strong>成片审核：</strong>对照脚本审核成片，主要关注点在钩子是否成立，埋下的话题是否吸引观众。</li></ol>
+        <div class="copy-block review"><span class="label mono">复盘</span><div class="review-lines"><p><strong>结果｜</strong>三条脚本全部被采用并上线。</p><p><strong>下次｜</strong>提前介入拍摄前的策划，根据流程预判可能的话题和剪辑方向。</p></div></div>
+        <div class="evidence aligned-evidence p2-evidence">
+          <figure><a class="media-link" href="assets/brand-marketing/p2-poster-2.jpg" target="_blank" aria-label="查看节目预热海报原图"><div class="media contain" style="--fit-width:41.61cqw"><img src="assets/brand-marketing/p2-poster-2.jpg" alt="节目预热海报" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p2-poster-2.jpg</span></div></a><figcaption>预热海报</figcaption></figure>
+          <figure><div class="media"><img src="assets/brand-marketing/p2-doc.jpg" alt="脱敏宣发脚本文档" onerror="this.parentElement.classList.add('missing');this.remove()"><span class="media-placeholder mono">p2-doc.jpg</span></div><figcaption>宣发脚本（脱敏版）</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </article>
+  <footer class="project-footer"><a class="bottom-back" href="index.html?view=projects#projects">← 返回项目</a></footer>
+</main>
+<script src="media-viewer.js"></script>
+</body>
+</html>
